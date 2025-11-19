@@ -1,0 +1,497 @@
+[
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column2",
+    "Value": "المجال"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column3",
+    "Value": "اللغة العربية"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column9",
+    "Value": "التربية الإسلامية"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column11",
+    "Value": "الرياضيات"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column13",
+    "Value": "Français"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column14",
+    "Value": "Chant/Poésie"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column17",
+    "Value": "النشاط العلمي"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column19",
+    "Value": "التربية الفنية"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column22",
+    "Value": "التربية البدنية"
+  },
+  {
+    "Column1": "الأسبوع",
+    "Attribute": "Column23",
+    "Value": "المهارات الحياتية"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column3",
+    "Value": "الاستماع والتحدث"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column6",
+    "Value": "القراءة/الخط/ النقل/ الإملاء"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column7",
+    "Value": "التعبير الكتابي"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column8",
+    "Value": "الظواهر اللغوية"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column9",
+    "Value": "الدرس الأول"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column10",
+    "Value": "الدرس الثاني"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column13",
+    "Value": "Lecture"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column15",
+    "Value": "Graphisme / Écriture"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column16",
+    "Value": "Projet"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column17",
+    "Value": "الدرس الأول"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column18",
+    "Value": "الدرس الثاني"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column19",
+    "Value": "التشكيل"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column20",
+    "Value": "الموسيقى"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column21",
+    "Value": "المسرح"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column3",
+    "Value": "الحكايات"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column4",
+    "Value": "الوضعية التواصلية"
+  },
+  {
+    "Column1": null,
+    "Attribute": "Column14",
+    "Value": "–Toute la famille"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column2",
+    "Value": "الأسرة"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column3",
+    "Value": "نظارة جدتي"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column4",
+    "Value": "يقدم نفسه"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column5",
+    "Value": "يحكي عن أفراد أسرته"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column6",
+    "Value": "الصوت/ الحرف ] د[ الدال"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column7",
+    "Value": "بناء كلمات بالإكمال والوصل"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column8",
+    "Value": "الجملة الفعلية المثبتة - ضمائر الأفراد"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column9",
+    "Value": "سورة الفاتحة"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column10",
+    "Value": "الله ﷻ ربي"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column11",
+    "Value": "تصنيف الأشياء"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column12",
+    "Value": "الترصيف"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column13",
+    "Value": "Le son “m”"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column15",
+    "Value": "Les courbes"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column16",
+    "Value": "Réaliser l’arbre généalogique"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column17",
+    "Value": "أتعرف المحيط الخارجي"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column19",
+    "Value": "- التشكيل باعتماد مواد لينة )عجين، طين، خيوط وألياف(."
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column20",
+    "Value": "- الاستماع إلى أصوات من المحيط المباشر والتعرف عليها؛"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column21",
+    "Value": "- التعبير مسرحيا بتوظيف: التسخين )الصوت/ الحرفي والحركي( - الاسترخاء )إزالة التوتر العصبي العضلي( - التنفس )العميق والطبيعي( – إيقاظ الحواس )النظر، السمع واللمس(؛"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column22",
+    "Value": "تعلم أساسيات التنقل والحركة البسيطة"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column23",
+    "Value": "تمييز الأماكن الآمنة للعبور - التعرف على الإشارات الأساسية - طلب المساعدة من الكبار"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column24",
+    "Value": "استخدام حزام الأمان - الجلوس الصحيح - عدم إلهاء السائق - التصرف عند الطوارئ"
+  },
+  {
+    "Column1": 2,
+    "Attribute": "Column25",
+    "Value": "معرفة أرقام الطوارئ - طريقة طلب المساعدة - التعامل مع رجل الشرطة - وصف المواقف بوضوح"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column4",
+    "Value": "يقدم أسرته"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column5",
+    "Value": "يحكي عن زيارة عائلية"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column6",
+    "Value": "الصوت/ الحرف ] م[ الميم"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column10",
+    "Value": "محمد نبي"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column11",
+    "Value": "التواصل حدا بحد"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column12",
+    "Value": "حل مسائل ببيانات مأخوذة من جدول"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column14",
+    "Value": "Dans la classe"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column15",
+    "Value": "Le graphème “m”"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column17",
+    "Value": "ما دور الجلد في حياتي؟"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column18",
+    "Value": "بماذا أميز الألوان والأشكال؟"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column19",
+    "Value": "- التخطيط باعتماد: الخط المستقيم والمنحني- التجاور والتشابك."
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column20",
+    "Value": "- محاكاة أصوات من المحيط المباشر؛"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column21",
+    "Value": "- تشخيص: مواقف الفرحة والانشراح."
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column22",
+    "Value": "التنقل بإيقاعات بطيئة ومتوسطة"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column23",
+    "Value": "التمييز بين العملات - فهم قيمة الشراء - التفريق بين الحاجة والرغبة"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column24",
+    "Value": "وضع أهداف للادخار - مقارنة الأسعار - تجنب الإسراف - تقدير قيمة المال"
+  },
+  {
+    "Column1": 3,
+    "Attribute": "Column25",
+    "Value": "ربط العمل بالدخل - تقدير جهد الوالدين - فهم مصادر المال - أهمية الأمانة في التعامل"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column3",
+    "Value": "غرفة جدي"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column4",
+    "Value": "يحيي ويرد التحية"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column5",
+    "Value": "يحكي لأفراد أسرته"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column6",
+    "Value": "الصوت/ الحرف ] ر[ الراء"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column7",
+    "Value": "ترتيب مقاطع الحروف المدروسة"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column8",
+    "Value": "المفرد المذكر والمؤنث - هذا، هذه"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column10",
+    "Value": "أعبد الله ﷻ على هدى رسول الله صلى الله عليه وسلم "
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column11",
+    "Value": "الأعداد من 1 إلى 5"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column12",
+    "Value": "تعرف الأعداد من 0 إلى 99 قراءة وكتابة وتمثيلا"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column13",
+    "Value": "Le son “a”"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column15",
+    "Value": "ronds"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column17",
+    "Value": "أتذوق الأشياء بلساني"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column18",
+    "Value": "أميز الأصوات المختلفة"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column20",
+    "Value": "- الاستماع لنشيد قصير وبسيط مع المصاحبة بالنبض."
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column22",
+    "Value": "التنقل بإيقاعات سريعة ومتنوعة"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column23",
+    "Value": "تسمية المهن المألوفة - فهم دور كل مهنة - تقدير أهمية العمل في الحياة"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column24",
+    "Value": "تجربة أنشطة مهنية بسيطة - تعلم استخدام الأدوات الأساسية - تطوير المهارات اليدوية"
+  },
+  {
+    "Column1": 4,
+    "Attribute": "Column25",
+    "Value": "تحديد الأنشطة المفضلة - التعبير عن الأحلام المهنية - ربط التعلم بالمستقبل"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column4",
+    "Value": "يشكر"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column5",
+    "Value": "يحكي حكاية سمعها من جده"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column6",
+    "Value": "الصوت/ الحرف ] ب[ الباء"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column9",
+    "Value": "أوحد الله ﷻ"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column10",
+    "Value": "أنفع ولا أضر"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column11",
+    "Value": "مقارنة الأعداد من 1 إلى 5 وترتيبها"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column12",
+    "Value": "تعرف العدد 100 قراءة وكتابة وتمثيلا"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column15",
+    "Value": "Le graphème “a”"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column17",
+    "Value": "أميز الروائح المختلفة"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column18",
+    "Value": "أحافظ على حواسي"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column22",
+    "Value": "التنقل الجماعي بتناسق الإيقاعات"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column23",
+    "Value": "تطبيق قواعد السلامة + الشراء المسؤول + مشاهدة المهن العملية"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column24",
+    "Value": "تخطيط آمن للمتجر + إدارة المال + تطبيق مهارات البيع والشراء"
+  },
+  {
+    "Column1": 5,
+    "Attribute": "Column25",
+    "Value": "تنظيم آمن للمعرض + التخطيط المالي للمعرض + عرض المواهب والطموحات"
+  },
+  {
+    "Column1": 6,
+    "Attribute": "Column3",
+    "Value": "تقويم حصيلة الوحدة الأولى ودعمها: تصفية الصعوبات وتعميق التعلمات"
+  }
+]

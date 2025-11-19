@@ -1,0 +1,507 @@
+[
+  {
+    "المفتاح": "المادة",
+    "Attribute": "Column2",
+    "Value": "المكون"
+  },
+  {
+    "المفتاح": "المادة",
+    "Attribute": "Column3",
+    "Value": "مراحل الحصة (الخطوات البيداغوجية)"
+  },
+  {
+    "المفتاح": "المادة",
+    "Attribute": "Column4",
+    "Value": "الحصة (الأهداف التعلمية)"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "1"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column6",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column7",
+    "Value": "4"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column8",
+    "Value": "5"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column9",
+    "Value": "6"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column10",
+    "Value": "7"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column11",
+    "Value": "8"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column12",
+    "Value": "9"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column13",
+    "Value": "10"
+  },
+  {
+    "المفتاح": "الاستماع والحدث",
+    "Attribute": "Column2",
+    "Value": "الحكاية"
+  },
+  {
+    "المفتاح": "الاستماع والحدث",
+    "Attribute": "Column3",
+    "Value": "1"
+  },
+  {
+    "المفتاح": "الاستماع والحدث",
+    "Attribute": "Column4",
+    "Value": "وضعية الانطلاق"
+  },
+  {
+    "المفتاح": "الاستماع والحدث",
+    "Attribute": "Column9",
+    "Value": "وضعية الانطلاق"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "التسميع"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column7",
+    "Value": "السرد"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column9",
+    "Value": "السرد"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column10",
+    "Value": "القراءة"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column11",
+    "Value": "إعداد"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column12",
+    "Value": "الظواهر"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "عناصر الحكاية"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "بنية الحكاية"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column6",
+    "Value": "الرصيد المعجمي"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column7",
+    "Value": "الظواهر اللغوية"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column9",
+    "Value": "القيم"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column10",
+    "Value": "التشخيص"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column11",
+    "Value": "الإنتاج"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column12",
+    "Value": "تقييم ودعم"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "4"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "تقييم ودعم"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column9",
+    "Value": "تقييم ودعم"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column2",
+    "Value": "الوضعية التواصلية"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "1"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "وضعية الانطلاق"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "التسميع"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "التسميع"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "الترديد"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column6",
+    "Value": "المحاكاة"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column7",
+    "Value": "التشخيص"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column9",
+    "Value": "التسميع"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column10",
+    "Value": "الترديد"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column11",
+    "Value": "المحاكاة"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column12",
+    "Value": "التشخيص"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "4"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "تقييم ودعم"
+  },
+  {
+    "المفتاح": "القراءة",
+    "Attribute": "Column3",
+    "Value": "1"
+  },
+  {
+    "المفتاح": "القراءة",
+    "Attribute": "Column4",
+    "Value": "الكلمات البصرية"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "وضعية الانطلاق"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "الوعي الصوتي"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "4"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "المبدأ الألبائي"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "5"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "التطبيق"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "الطلاقة/ التطبيق"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "6"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "تقييم ودعم"
+  },
+  {
+    "المفتاح": "الكابة",
+    "Attribute": "Column2",
+    "Value": "الخط/ النقل/ الإملاء"
+  },
+  {
+    "المفتاح": "الكابة",
+    "Attribute": "Column3",
+    "Value": "1"
+  },
+  {
+    "المفتاح": "الكابة",
+    "Attribute": "Column4",
+    "Value": "وضعية الانطلاق"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "إعداد"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "إنجاز"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "4"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "تصحيح"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "5"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "نشاط منزلي (الخط فقط)"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column2",
+    "Value": "التعبير الكتابي"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "1"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "تهيئة"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "إنجاز"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "تتبع"
+  },
+  {
+    "المفتاح": "الرياضبات",
+    "Attribute": "Column3",
+    "Value": "1"
+  },
+  {
+    "المفتاح": "الرياضبات",
+    "Attribute": "Column4",
+    "Value": "البناء"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "الترييض"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column7",
+    "Value": "تقييم ودعم"
+  },
+  {
+    "المفتاح": "النشاط العلمي",
+    "Attribute": "Column3",
+    "Value": "1"
+  },
+  {
+    "المفتاح": "النشاط العلمي",
+    "Attribute": "Column4",
+    "Value": "وضعية انطلاق: يختار الأستاذ وضعية مثيرة للتعلم (Situation déclenchante)، تسعى من خلالها إلى إحداث خلخلة معرفية لدى المتعلمين. وترتكز هذه الخطوة على رصد تمثلاتهم ومواجهتها بهدف إدماج الجديد، على أن تكون مرتبطة بمحيط المتعلم وحياته اليومية، مع مراعاة علاقتها بالكفاية المستهدفة والأهداف التعليمية المرتبطة بالموضوع.\n\nيمكن الاعتماد على شريط فيديو، أو صورة، أو وثيقة مكتوبة، أو تجربة مباشرة، بحيث ينتج عنها صراع ذهني لدى المتعلمات والمتعلمين ويولد لديهم مجموعة من التساؤلات."
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "2"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "أساءل: يصوغ الأستاذ(ة) وضعية مشكلة، ويشتغل التلاميذ على فهمها بمساعدة المدرس. يساعدهم هذا على الاستيعاب والتملك، وعلى طرح الأسئلة وتحديد الإشكالية. ويتأكد المدرس من أن السؤال التقويمي قد صيغ بشكل دقيق."
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "3"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column4",
+    "Value": "أفترض: يقترح المتعلمات والمتعلمون مجموعة من الحلول المفترضة، شفهياً أو كتابياً، دون الحاجة إلى إثباتها مؤقتاً. وينبغي تعويد المتعلمين على افتتاح كلامهم بعبارات من قبيل:\n\n\"في رأيي...\"\n\n\"من وجهة نظري...\"\n\n\"أعتقد أن...\""
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "4"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "أختبر وأجرب: يقوم المتعلمون باختبار الفرضيات من خلال عزل المتغيرات، وذلك باعتماد المناولات المناسبة، أو التجارب، أو الملاحظة، أو النمذجة، أو البحث التوثيقي، أو الزيارات الاستطلاعية… حسب طبيعة الموضوع.\nويحرص الأستاذ(ة) على السهر على حسن سير أشكال التقصي.\nكما يعتمد المتعلمون على الرسوم أو الأشكال أو التعابير الكتابية لتحرير النتائج المتوصل إليها، سواء بشكل فردي أو جماعي، على دفتر التقصي."
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "5"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "أدون وأتقاسم: يعرض ممثلو المجموعات نتائج عمليات التقصي التي أنجزوها، ويتم مناقشتها ومقارنتها بالفرضيات المقترحة من أجل إثباتها أو نفيها.\nويقوم الأستاذ(ة) بتنشيط النقاش والاهتمام أكثر بالتمثلات التي تظهر خلال هذه المرحلة، وكذا الأخطاء التي يمكن تصحيحها."
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column3",
+    "Value": "6"
+  },
+  {
+    "المفتاح": null,
+    "Attribute": "Column5",
+    "Value": "أعمم وأطبق: يعتمد هذا النشاط على تدخل الأستاذ(ة) بناءً على مرحلة التقاسم، من أجل تشكيل وبناء التعلمات المستهدفة. ويتم ذلك باستثمار الاستنتاجات في شكل جداول أو خطاطات أو أشكال أو رسوم، بهدف التعميم وتمكين المتعلمين من توثيقها."
+  }
+]
