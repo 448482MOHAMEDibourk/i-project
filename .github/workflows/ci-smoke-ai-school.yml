@@ -1,0 +1,50 @@
+name: ai-school CI - smoke
+
+on:
+  push:
+    paths:
+      - "new-project/ai-school/**"
+  pull_request:
+    paths:
+      - "new-project/ai-school/**"
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install minimal requirements
+        run: |
+          cd new-project/ai-school
+          python -m pip install --upgrade pip
+          # prefer installing project's requirements; fall back to a minimal install
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install numpy
+          fi
+
+      - name: Run smoke script
+        run: |
+          cd new-project/ai-school
+          python run_ordered_prompt.py
+
+      # Optional: run tests if present (uncomment to enable)
+      # - name: Run pytest (optional)
+      #   run: |
+      #     cd new-project/ai-school
+      #     pip install pytest || true
+      #     pytest -q tests || exit 0
+
+      - name: Upload ordered_output.json
+        uses: actions/upload-artifact@v3
+        with:
+          name: ai-school-ordered-output
+          path: new-project/ai-school/ordered_output.json
