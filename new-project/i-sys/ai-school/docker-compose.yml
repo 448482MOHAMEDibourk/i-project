@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  ollama-mock:
+    build: ./mocks/ollama
+    ports:
+      - "11434:11434"
+  aider-mock:
+    build: ./mocks/aider
+    ports:
+      - "8000:8000"
