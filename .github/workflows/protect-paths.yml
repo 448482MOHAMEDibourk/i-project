@@ -1,0 +1,26 @@
+name: Protect Protected Paths
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-protected-paths:
+    name: Check protected paths and require EXCEPTION
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base ref
+        if: github.event.pull_request.base.ref != ''
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+
+      - name: Run protected paths check
+        env:
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: |
+          python3 scripts/check_protected_paths.py
