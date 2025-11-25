@@ -21,7 +21,7 @@ Thumbs.db
 .idea/
 
 # Ignore converted lesson planner JSON data
-/new-project/ai-school/lessons/imported-from-failed/lesson-planner/data/converted/
+/api_service/ai-school/lessons/imported-from-failed/lesson-planner/data/converted/
 
 # Local test virtualenv used by CI/dev runs
 .venv-test/
@@ -38,3 +38,4 @@ backup/
 # Bytecode caches
 __pycache__/
 *.pyc
+data/archive/

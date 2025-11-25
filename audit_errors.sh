@@ -14,26 +14,26 @@ echo "--- DETECTING PATHS TO AUDIT ---" >> "$OUTPUT_FILE"
 LINT_PATHS=()
 if [ -d "i_system" ]; then
   LINT_PATHS+=("i_system")
-elif [ -d "i-sys" ]; then
-  LINT_PATHS+=("i-sys")
+elif [ -d "i_system" ]; then
+  LINT_PATHS+=("i_system")
 fi
 
 if [ -d "api_service" ]; then
   LINT_PATHS+=("api_service")
-elif [ -d "new-project" ]; then
-  LINT_PATHS+=("new-project")
+elif [ -d "api_service" ]; then
+  LINT_PATHS+=("api_service")
 fi
 
 # Always consider ai-school subfolder if present under either location
-# (this helps pick up new-project/ai-school or api_service/ai-school)
+# (this helps pick up api_service/ai-school or api_service/ai-school)
 if [ -d "api_service/ai-school" ]; then
   LINT_PATHS+=("api_service/ai-school")
-elif [ -d "new-project/ai-school" ]; then
-  LINT_PATHS+=("new-project/ai-school")
+elif [ -d "api_service/ai-school" ]; then
+  LINT_PATHS+=("api_service/ai-school")
 fi
 
 if [ ${#LINT_PATHS[@]} -eq 0 ]; then
-  echo "No target paths found (i_system / i-sys / api_service / new-project)" >> "$OUTPUT_FILE"
+  echo "No target paths found (i_system / i_system / api_service / api_service)" >> "$OUTPUT_FILE"
   echo "No paths found locally. Exiting." >&2
   echo "--- AUDIT COMPLETE (no targets) ---" >> "$OUTPUT_FILE"
   head -n 20 "$OUTPUT_FILE"
@@ -56,7 +56,7 @@ echo "\n--- PYTEST (Import & Config Errors) ---" >> "$OUTPUT_FILE"
 if command -v pytest >/dev/null 2>&1; then
   # Ensure test-time imports can be resolved by adding possible package roots to PYTHONPATH
   export PYTHONPATH="${PYTHONPATH:-}"
-  for d in i-sys i_system new-project api_service; do
+  for d in i_system i_system api_service api_service; do
     if [ -d "$d" ]; then
       export PYTHONPATH="$PWD/$d:$PYTHONPATH"
     fi

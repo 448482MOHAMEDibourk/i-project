@@ -1,4 +1,4 @@
-# ai-sources.yaml - configuration of local AI sources for i-sys
+# ai-sources.yaml - configuration of local AI sources for i_system
 # This file lists local endpoints and preferred models for quick reference.
 ollama:
   url: "http://localhost:11434"
@@ -11,5 +11,5 @@ aider:
     - "/generate"
 
 # Notes:
-# - Place this file under i-sys for tools to read when constructing test requests.
+# - Place this file under i_system for tools to read when constructing test requests.
 # - It's intentionally minimal; scripts prefer .env values but will fall back to these.

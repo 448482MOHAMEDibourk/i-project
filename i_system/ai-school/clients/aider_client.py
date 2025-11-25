@@ -4,11 +4,12 @@ and return a tuple `(ok: bool, message: str)` where `message` is the response te
 on success or an error string prefixed with "[error]" on failure.
 """
 
-from src.config.settings import settings
 import json
 from typing import Tuple
 
 import requests
+
+from src.config.settings import settings
 
 DEFAULT_AIDER_ENDPOINT = "http://localhost:8000"
 

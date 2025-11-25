@@ -1,4 +1,4 @@
-"""Helpers to check local AI services (Ollama, Aider) for i-sys.
+"""Helpers to check local AI services (Ollama, Aider) for i_system.
 
 Reads optional header config from env (AIDER_HEADERS, OLLAMA_HEADERS) as JSON
 and falls back to `ai-sources.yaml` for URLs and default models.
@@ -75,7 +75,7 @@ def check_ollama(
     headers = _headers_from_env("OLLAMA_HEADERS")
 
     url = f"{base_url.rstrip('/')}/api/generate"
-    payload = {"model": model, "prompt": "i-sys health check: اختبار"}
+    payload = {"model": model, "prompt": "i_system health check: اختبار"}
     try:
         resp = requests.post(url, json=payload, timeout=timeout, headers=headers)
         resp.raise_for_status()
@@ -105,7 +105,7 @@ def check_aider(endpoint: str | None = None, timeout: int = 5) -> Tuple[bool, st
         try:
             resp = requests.post(
                 url,
-                json={"prompt": "i-sys health check: اختبار"},
+                json={"prompt": "i_system health check: اختبار"},
                 timeout=timeout,
                 headers=headers,
             )

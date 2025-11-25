@@ -18,8 +18,8 @@ consumers' error handling logic.
 
 ## Scope / Suggested targets
 
-- `new-project/i-sys/i_sys/helpers.py` (already returns `(bool, str)` — verify and harmonize)
-- Any client under `new-project/i-sys/ai-school/clients/` (for example `aider_client.py`, any other wrappers)
+- `api_service/i_system/i_sys/helpers.py` (already returns `(bool, str)` — verify and harmonize)
+- Any client under `api_service/i_system/ai-school/clients/` (for example `aider_client.py`, any other wrappers)
 - Scripts or utilities that return/print error strings which are consumed programmatically
 
 ## Acceptance criteria

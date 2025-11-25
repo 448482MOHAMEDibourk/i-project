@@ -2,7 +2,7 @@
 
 ## Summary
 
-This PR unifies the error-handling contract for the Aider client used by i-sys.
+This PR unifies the error-handling contract for the Aider client used by i_system.
 Instead of returning an opaque string that sometimes started with `[error]`, the
 client now returns a consistent tuple `(ok: bool, message: str)` where `ok` is
 True for success and False for failure, and `message` contains the response text
@@ -10,10 +10,10 @@ or an error string prefixed with `[error]`.
 
 ## Files changed
 
-- `new-project/i-sys/ai-school/clients/aider_client.py`
+- `api_service/i_system/ai-school/clients/aider_client.py`
   - `AiderClient.ask` now returns `Tuple[bool, str]` and normalizes JSON/text
     responses and errors.
-- `new-project/i-sys/ai-school/tests/test_aider_client.py` (new)
+- `api_service/i_system/ai-school/tests/test_aider_client.py` (new)
   - Unit tests covering: plain text success, JSON success, HTTP error (404),
     and connection exception (ConnectionError). Tests are mocked and deterministic.
 
@@ -29,7 +29,7 @@ or an error string prefixed with `[error]`.
 
 - Tests were executed locally in an isolated virtualenv (`.venv-test`):
 
-  - `pytest new-project/i-sys/ai-school/tests/test_aider_client.py` → 4 passed
+  - `pytest api_service/i_system/ai-school/tests/test_aider_client.py` → 4 passed
 
 ## CI / Next steps
 

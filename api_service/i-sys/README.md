@@ -1,4 +1,4 @@
-## i-sys — System helpers for new-projects
+## i_system — System helpers for api_services
 
 هذا المجلد يجمع أدوات مساعدة جاهزة لتشغيل مشروع `ai-school` محليًا باستخدام نماذج محلية (Ollama, Aider) أو عبر حاويات Docker (mocks). الهدف هنا جعل تجربة التشغيل قابلة للتكرار للمطورين.
 
@@ -21,7 +21,7 @@
 
 ### إعداد سريع (Quick start)
 
-1. انسخ متغيرات البيئة الافتراضية إلى ملف `.env` داخل `i-sys`:
+1. انسخ متغيرات البيئة الافتراضية إلى ملف `.env` داخل `i_system`:
 
 ```bash
 cp .env.example .env
@@ -58,7 +58,7 @@ curl -sS -X POST "$OLLAMA_URL/api/generate" -H "Content-Type: application/json" 
 # Aider (إذا كان يعمل على http://localhost:8000)
 curl -sS -X POST "${AIDER_ENDPOINT%/}/ask" -H "Content-Type: application/json" -d '{"prompt":"اختبار"}'
 
-# أمثلة جاهزة (من مجلد i-sys)
+# أمثلة جاهزة (من مجلد i_system)
 ./examples/run_prompt.sh
 python examples/run_prompt.py
 ```
@@ -95,20 +95,20 @@ cp .env.example .env
 2. استنساخ أو تحديث مستودع `ai-school`:
 
 ```bash
-# من داخل مجلد i-sys
+# من داخل مجلد i_system
 ./scripts/clone_ai_school.sh
 ```
 
 3. تشغيل الفحوصات السريعة (Ollama / Aider):
 
 ```bash
-# من داخل i-sys
+# من داخل i_system
 ./scripts/check_ollama.sh
 ./scripts/check_aider.sh
 
 # أو — من أي مكان إذا أضفت الأغلفة إلى PATH (انظر أدناه)
-check_ollama_i-sys
-check_aider_i-sys
+check_ollama_i_system
+check_aider_i_system
 ```
 
 4. تشغيل العرض التوضيحي في `ai-school`:
@@ -116,7 +116,7 @@ check_aider_i-sys
 ```bash
 ./run_demo.sh
 # أو من مجلد أعلى
-# ./run_demo.sh (إذا كنت في i-sys) أو cd ../ai-school && ./run_demo.sh
+# ./run_demo.sh (إذا كنت في i_system) أو cd ../ai-school && ./run_demo.sh
 ```
 
 إضافة `~/bin` إلى PATH (إذا لم تكن موجودة):
@@ -128,7 +128,7 @@ export PATH="$HOME/bin:$PATH"
 
 ملاحظات تصحيح الأخطاء السريعة
 
-- إذا رأيت `No such file or directory` عند محاولة تشغيل `./scripts/check_ollama.sh` من الدليل الرئيسي (`~`)، فتأكد أنك في مجلد `i-sys` أو استخدم الأغلفة `check_ollama_i-sys`.
+- إذا رأيت `No such file or directory` عند محاولة تشغيل `./scripts/check_ollama.sh` من الدليل الرئيسي (`~`)، فتأكد أنك في مجلد `i_system` أو استخدم الأغلفة `check_ollama_i_system`.
 - إذا لم يستجب Ollama/Aider، افحص سجلات الخدمة، أو شغّل الموكز عبر `./run_local_mocks.sh` في حالة وجود mocks في `ai-school`.
 
 ### استكشاف الأخطاء وإصلاحها

@@ -3,6 +3,7 @@
 
 Exit non-zero if protected paths are changed and no EXCEPTION is present.
 """
+
 import json
 import os
 import re
@@ -45,14 +46,16 @@ def matches_protected(path):
 def git_changed_files_status(base_ref):
     # fetch of base_ref should be done in workflow step
     try:
-        out = subprocess.check_output(["git", "diff", "--name-status", f"origin/{base_ref}...HEAD"]) 
+        out = subprocess.check_output(
+            ["git", "diff", "--name-status", f"origin/{base_ref}...HEAD"]
+        )
         lines = out.decode().splitlines()
         # returns list of (status, path)
         files = []
         for l in lines:
             if not l:
                 continue
-            parts = l.split('\t', 1)
+            parts = l.split("\t", 1)
             if len(parts) == 1:
                 # sometimes space separated
                 parts = l.split(maxsplit=1)
@@ -114,12 +117,18 @@ def main():
 
     # If there are append-only violations, fail with a clear message
     if append_violations:
-        print("ERROR: Append-only paths were modified or deleted but no EXCEPTION provided.")
+        print(
+            "ERROR: Append-only paths were modified or deleted but no EXCEPTION provided."
+        )
         print("Append-only files changed (status:\tpath):")
         for s, p in append_violations:
             print(f" - {s}\t{p}")
-        print("\nThese paths are append-only. Do not modify or delete existing records. To correct data, add a new record/entry with explanation.")
-        print("If this change is required, include an 'EXCEPTION: <paths>' line in the PR body and link the approval issue.")
+        print(
+            "\nThese paths are append-only. Do not modify or delete existing records. To correct data, add a new record/entry with explanation."
+        )
+        print(
+            "If this change is required, include an 'EXCEPTION: <paths>' line in the PR body and link the approval issue."
+        )
         return 2
 
     if protected:
@@ -127,7 +136,9 @@ def main():
         print("Changed protected files:")
         for p in protected:
             print(" - ", p)
-        print("\nTo approve this change, include an 'EXCEPTION: <paths>' line in the PR body or add an 'EXCEPTION' label, and link the approval issue.")
+        print(
+            "\nTo approve this change, include an 'EXCEPTION: <paths>' line in the PR body or add an 'EXCEPTION' label, and link the approval issue."
+        )
         return 2
 
     print("No protected or append-only violations detected.")

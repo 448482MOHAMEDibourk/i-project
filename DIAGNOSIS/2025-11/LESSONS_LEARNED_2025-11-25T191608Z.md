@@ -1,6 +1,6 @@
 # LESSONS LEARNED — 2025-11-25T191608Z (UTC)
 
-**Branch:** `chore/rename-i-sys-new-project`
+**Branch:** `chore/rename-i_system-api_service`
 
 ## 1) Summary
 
@@ -8,8 +8,8 @@
 - Reduced lint noise by excluding archive files from `ruff` via `pyproject.toml`.
 - Enabled manual CI dispatch by adding `workflow_dispatch` to ai-school workflows.
 - Applied small focused fixes to address import-order issues (E402, F404) in:
-  - `i-sys/ai-school/clients/aider_client.py`
-  - `i-sys/i_sys/helpers.py`
+  - `i_system/ai-school/clients/aider_client.py`
+  - `i_system/i_sys/helpers.py`
 
 ## 2) Current important findings
 
@@ -45,31 +45,31 @@ PYTHONPATH=$PWD pytest -q
 - [ ] Make package `i_sys` and/or `lesson_data` installable (e.g., `pip install -e .`) so pytest can collect tests reliably.
 - [ ] Consider updating pre-commit config to ignore `data/archive/**` or move archives out of the repo to avoid noise.
 - [ ] After packaging fixes, re-run `./audit_errors.sh` and verify `DIAGNOSIS/CURRENT_ERRORS.txt` is clear for critical issues.
-- [ ] When ready, apply bulk rename (`i-sys` → `i_system`, `new-project` → `api_service`) in a dedicated PR and run CI.
+- [ ] When ready, apply bulk rename (`i_system` → `i_system`, `api_service` → `api_service`) in a dedicated PR and run CI.
 
 ## 6) References
 
 - Diagnostic output: `DIAGNOSIS/CURRENT_ERRORS.txt`
-- Related branch: `chore/rename-i-sys-new-project`
+- Related branch: `chore/rename-i_system-api_service`
 - Helpful commands: `ruff check . --fix`, `pytest -q`, `python3 -m pip install -e .`
 
 ---
 
-Generated and committed by automation on `chore/rename-i-sys-new-project`.
+Generated and committed by automation on `chore/rename-i_system-api_service`.
 
 ## Appendix: DIAGNOSIS/CURRENT_ERRORS.txt (excerpt — first 50 lines)
 
 ```
 --- Tue 25 Nov 2025 07:41:01 PM +01 ---
 --- DETECTING PATHS TO AUDIT ---
-Paths to audit: i-sys new-project
- new-project/ai-school
+Paths to audit: i_system api_service
+ api_service/ai-school
 \n--- RUFF LINTING ERRORS (Active
  Code) ---
---- ruff: i-sys ---
+--- ruff: i_system ---
 E402 Module level import not at t
 op of file
-  --> i-sys/i_sys/helpers.py:9:1
+  --> i_system/i_sys/helpers.py:9:1
    |
  7 | """
  8 |
@@ -81,7 +81,7 @@ op of file
 
 E402 Module level import not at t
 op of file
-  --> i-sys/i_sys/helpers.py:10:1
+  --> i_system/i_sys/helpers.py:10:1
    |
  9 | import json
 10 | import os
@@ -93,7 +93,7 @@ le
 
 E402 Module level import not at t
 op of file
-  --> i-sys/i_sys/helpers.py:11:1
+  --> i_system/i_sys/helpers.py:11:1
    |
  9 | import json
 10 | import os
@@ -105,7 +105,7 @@ le
 
 E402 Module level import not at t
 op of file
-  --> i-sys/i_sys/helpers.py:12:1
+  --> i_system/i_sys/helpers.py:12:1
    |
 10 | import os
 11 | from pathlib import Path
@@ -119,10 +119,10 @@ le
 
 E402 Module level import not at t
 op of file
-  --> i-sys/i_sys/helpers.py:14:1
+  --> i_system/i_sys/helpers.py:14:1
    |
 ```
 
-Generated and committed by automation on `chore/rename-i-sys-new-project`.
+Generated and committed by automation on `chore/rename-i_system-api_service`.
 
 ````

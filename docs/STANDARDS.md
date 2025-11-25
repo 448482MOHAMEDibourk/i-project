@@ -111,11 +111,11 @@ git restore <path>
 
 - **إزالة الغموض في المسارات:** إعادة تسمية المجلدات المتسببة في التضارب لتوضيح الغرض منها.
 
-  - الإجراء: استخدم أمر `find` لتحديد ملف التشغيل الحقيقي، ثم أعد تسمية المجلد الذي يحتويه (مثلاً إذا كان `new-project/i-sys` هو الكود الأساسي، فقم بتسميته `core_system`).
+  - الإجراء: استخدم أمر `find` لتحديد ملف التشغيل الحقيقي، ثم أعد تسمية المجلد الذي يحتويه (مثلاً إذا كان `api_service/i_system` هو الكود الأساسي، فقم بتسميته `core_system`).
 
 - **ملفات الدعم/المكتبات الفرعية:** يجب تمييزها بوضوح.
 
-  - الإجراء: استخدم `snake_case` للأسماء (مثال: `i_system` بدلاً من `i-sys`) لتفادي الالتباس مع أدوات CI أو أسماء الحزم.
+  - الإجراء: استخدم `snake_case` للأسماء (مثال: `i_system` بدلاً من `i_system`) لتفادي الالتباس مع أدوات CI أو أسماء الحزم.
 
 - **قاعدة التجاهل (Exclusion):** تأكد من أن `pyproject.toml` يتضمن `exclude = ["data/archive/**"]` ضمن إعدادات التحليل، وتحقق من أن `ruff` يقرأها فعليًا قبل عمليات الفحص.
 
@@ -142,11 +142,11 @@ git restore <path>
 find . -name "main.py" -o -name "run.py" -o -name "app.py" -o -name "server.py"
 
 # البحث عن وحدات قابلة للتشغيل
-grep -R --line-number "if __name__ == \"__main__\"" src new-project i-sys || true
+grep -R --line-number "if __name__ == \"__main__\"" src api_service i_system || true
 
 # التحقق من قواعد التجاهل في pyproject.toml ثم تشغيل ruff على المسارات المحددة
 python -c "import tomllib,sys;print('pyproject found' if tomllib.loads(open('pyproject.toml','rb').read()) else 'no')" || true
-ruff check src new-project || true
+ruff check src api_service || true
 ```
 
 اتّباع هذه القواعد سيساعد على تركيز جهود التصحيح على الخطأ المركزي وتجنّب تغييرات واسعة غير ضرورية أثناء الدورة الأولى من الإصلاح.

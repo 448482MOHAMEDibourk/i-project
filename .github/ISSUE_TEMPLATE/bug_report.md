@@ -9,6 +9,7 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Go to '...'
 2. Run '...'
 3. See error
@@ -17,12 +18,14 @@ Steps to reproduce the behavior:
 Paste the traceback or attach CI run link (first 10 lines at minimum).
 
 **Environment (please complete the following information):**
-- Branch: 
-- Commit: 
-- Service/Component: 
+
+- Branch:
+- Commit:
+- Service/Component:
 
 **Priority (triage)**
-- Estimated Impact (P0/P1/P2/P3): 
+
+- Estimated Impact (P0/P1/P2/P3):
 
 **Additional context**
 
