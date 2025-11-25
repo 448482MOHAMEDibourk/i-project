@@ -13,7 +13,6 @@ from __future__ import annotations
 import argparse
 import os
 import re
-import sys
 from typing import List, Set
 
 
@@ -43,7 +42,12 @@ def scan_code_for_imports(paths: List[str], pkgs: Set[str]) -> Set[str]:
 
     code_ext = (".py", ".js", ".ts")
     # build regex table for packages for faster checks
-    pkg_regex = {p: re.compile(rf"(^|\s|\.|\(|\[|\")((from)\s+{re.escape(p)}\b|(import)\s+{re.escape(p)}\b)") for p in pkgs}
+    pkg_regex = {
+        p: re.compile(
+            rf"(^|\s|\.|\(|\[|\")((from)\s+{re.escape(p)}\b|(import)\s+{re.escape(p)}\b)"
+        )
+        for p in pkgs
+    }
 
     for start in paths:
         if not os.path.exists(start):
@@ -67,8 +71,12 @@ def scan_code_for_imports(paths: List[str], pkgs: Set[str]) -> Set[str]:
 
 def main(argv: List[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--paths", nargs="*", default=["src", "scripts", "tests"])  # paths to search
-    parser.add_argument("--req", default="requirements.txt", help="Path to requirements.txt")
+    parser.add_argument(
+        "--paths", nargs="*", default=["src", "scripts", "tests"]
+    )  # paths to search
+    parser.add_argument(
+        "--req", default="requirements.txt", help="Path to requirements.txt"
+    )
     args = parser.parse_args(argv)
 
     pkgs = read_requirements(args.req)
@@ -76,7 +84,9 @@ def main(argv: List[str] | None = None) -> int:
         print("Warning: no packages found in requirements.txt; skipping G11 check.")
         return 0
 
-    print(f"--- Checking for Unused Dependencies (G11): {len(pkgs)} packages to check ---")
+    print(
+        f"--- Checking for Unused Dependencies (G11): {len(pkgs)} packages to check ---"
+    )
     used = scan_code_for_imports(args.paths, pkgs)
     unused = sorted(list(pkgs - used))
 
@@ -86,7 +96,9 @@ def main(argv: List[str] | None = None) -> int:
             print(f"- {u}")
         return 1
 
-    print("--- G11 PASSED: All packages in requirements.txt appear to be used (heuristic). ---")
+    print(
+        "--- G11 PASSED: All packages in requirements.txt appear to be used (heuristic). ---"
+    )
     return 0
 
 

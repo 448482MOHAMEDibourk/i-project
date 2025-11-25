@@ -10,7 +10,6 @@ from typing import Tuple
 
 import requests
 
-
 DEFAULT_AIDER_ENDPOINT = "http://localhost:8000"
 
 
@@ -30,6 +29,26 @@ class AiderClient:
         paths = ["/ask", "/v1/ask", "/api/ask", "/generate"]
         payload = {"prompt": prompt}
 
+        def _safe_text(resp) -> str:
+            try:
+                return resp.text
+            except Exception:
+                return "<no-body>"
+
+        def _extract_text(resp) -> str:
+            ct = resp.headers.get("Content-Type", "")
+            if "application/json" in ct:
+                try:
+                    j = resp.json()
+                    return (
+                        j.get("text")
+                        or j.get("output")
+                        or json.dumps(j, ensure_ascii=False)
+                    )
+                except Exception:
+                    return _safe_text(resp)
+            return _safe_text(resp)
+
         last_err = None
         for p in paths:
             url = self.endpoint.rstrip("/") + p
@@ -37,28 +56,15 @@ class AiderClient:
                 resp = requests.post(
                     url, json=payload, timeout=timeout, headers=self.headers
                 )
-                if 200 <= resp.status_code < 300:
-                    # prefer plain text, fall back to json->text
-                    ct = resp.headers.get("Content-Type", "")
-                    if "application/json" in ct:
-                        try:
-                            j = resp.json()
-                            text = j.get("text") or j.get("output") or json.dumps(j, ensure_ascii=False)
-                        except Exception:
-                            text = resp.text
-                        return True, text
-                    return True, resp.text
-                # non-2xx -> record and try next path
-                try:
-                    body = resp.text
-                except Exception:
-                    body = "<no-body>"
-                last_err = f"HTTP {resp.status_code}: {body[:200]}"
             except Exception as e:
-                # record exception and try next path
                 last_err = e
+                continue
 
-        # After trying all paths, return a clear error tuple
+            if 200 <= resp.status_code < 300:
+                return True, _extract_text(resp)
+
+            last_err = f"HTTP {resp.status_code}: {(_safe_text(resp))[:200]}"
+
         if last_err is None:
             return False, "[error] Aider request failed: no response and no exception"
         return False, f"[error] Aider request failed: {last_err}"

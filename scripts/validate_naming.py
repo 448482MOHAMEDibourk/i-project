@@ -12,7 +12,6 @@ from __future__ import annotations
 import argparse
 import os
 import re
-import sys
 from typing import List, Tuple
 
 
@@ -55,7 +54,9 @@ def check_paths(paths: List[str]) -> Tuple[bool, int]:
                 if is_excluded(full):
                     continue
                 if not dir_re.match(d):
-                    messages.append(f"DIR ERROR (G14/G15): '{full}' should use snake_case or kebab-case (lowercase, numbers, '-', '_' or '.').")
+                    messages.append(
+                        f"DIR ERROR (G14/G15): '{full}' should use snake_case or kebab-case (lowercase, numbers, '-', '_' or '.')."
+                    )
                     errors += 1
 
             for f in files:
@@ -69,12 +70,16 @@ def check_paths(paths: List[str]) -> Tuple[bool, int]:
 
                 if f.endswith(".py"):
                     if not py_re.match(f):
-                        messages.append(f"FILE ERROR (G14): Python file '{full}' should be snake_case (e.g., my_file.py).")
+                        messages.append(
+                            f"FILE ERROR (G14): Python file '{full}' should be snake_case (e.g., my_file.py)."
+                        )
                         errors += 1
                 else:
                     # relaxed rule for docs/config/data files
                     if not other_re.match(f):
-                        messages.append(f"FILE WARNING: File '{full}' has unusual characters; prefer snake_case or kebab-case.")
+                        messages.append(
+                            f"FILE WARNING: File '{full}' has unusual characters; prefer snake_case or kebab-case."
+                        )
 
     if errors:
         print("--- Naming Validation FAILED (G14/G15) ---")
@@ -88,7 +93,9 @@ def check_paths(paths: List[str]) -> Tuple[bool, int]:
 
 def main(argv: List[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--paths", nargs="*", default=["docs", "src", "scripts", "tests", "config"])  # default targets
+    parser.add_argument(
+        "--paths", nargs="*", default=["docs", "src", "scripts", "tests", "config"]
+    )  # default targets
     args = parser.parse_args(argv)
 
     success, count = check_paths(args.paths)
