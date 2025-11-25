@@ -93,12 +93,16 @@ git restore <path>
 - اكتب "نعم، جهّز PR" وسأُنشئ ملف `pr_body_full.md` (هذا الملف) كـ body جاهز للنسخ في واجهة GitHub و/أو أفتح PR تلقائياً إذا رغبت.
 - اكتب "راجع" إن أردت إدخال تعديلات على نص الـ PR قبل إنشائه.
 
-**Priority Rules**
 
-- **Critical fixes:** Fixes that block CI, cause data loss, or are security-critical — address these immediately and deploy as hotfixes if needed.
-- **Secondary fixes:** Non-blocking bugs that impact core user flows or integrations — fix after critical issues in the next release window.
-- **Central improvement:** Centralized or infra-level improvements (e.g., settings consolidation, shared client contracts) that reduce technical debt and improve maintainability — schedule once high-priority bugs are handled.
-- **Secondary improvement:** Low-risk enhancements, documentation, and ergonomics (tests, docs, minor refactors) — handled as time permits.
+**Priority Rules (Detection-First)**
+
+- **Comprehensive detection & prioritization (أولوية الكشف والفرز):** Perform a full discovery of runtime and integration errors across the active code paths, then rank them by centrality/impact. This discovery-and-ranking step is the top priority.
+
+- **Fix (Central-first):** Repair the most central and high-impact runtime errors first (CI blockers, security, data-loss). Apply minimal, targeted fixes and validate with tests and CI.
+
+- **Central improvements / infra:** After critical fixes, implement central improvements that prevent recurrence (settings consolidation, shared client contracts, infra refactors).
+
+- **Secondary improvements / docs:** Low-risk work such as documentation, minor refactors, and ergonomics improvements — schedule opportunistically.
 
 
 **قواعد الحوكمة (Governance Rules)**
