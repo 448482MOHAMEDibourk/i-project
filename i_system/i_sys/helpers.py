@@ -1,11 +1,5 @@
 from __future__ import annotations
 
-"""Helpers to check local AI services (Ollama, Aider) for i_system.
-
-Reads optional header config from env (AIDER_HEADERS, OLLAMA_HEADERS) as JSON
-and falls back to `ai-sources.yaml` for URLs and default models.
-"""
-
 import json
 import os
 from pathlib import Path
@@ -14,6 +8,12 @@ from typing import Dict, Tuple
 import requests
 
 from src.config.settings import settings
+
+"""Helpers to check local AI services (Ollama, Aider) for i_system.
+
+Reads optional header config from env (AIDER_HEADERS, OLLAMA_HEADERS) as JSON
+and falls back to `ai-sources.yaml` for URLs and default models.
+"""
 
 
 def _read_ai_sources_fallback() -> dict:

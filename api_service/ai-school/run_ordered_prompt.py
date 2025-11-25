@@ -3,6 +3,7 @@
 This file intentionally exits with code 0 so the smoke
 test step completes and CI can continue to lint/tests.
 """
+
 import sys
 
 
