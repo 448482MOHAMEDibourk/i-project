@@ -1,0 +1,3 @@
+[tool.ruff]
+# قواعد إضافية يمكن إضافتها هنا لاحقًا
+exclude = ["data/archive/**"]
