@@ -25,3 +25,16 @@ Thumbs.db
 
 # Local test virtualenv used by CI/dev runs
 .venv-test/
+
+# Dry-run / codemod artifacts
+.tmp_g12_refactor*
+
+# Temporary partition/dryrun outputs
+.tmp_partition_dryrun/
+
+# Backups and miscellaneous
+backup/
+
+# Bytecode caches
+__pycache__/
+*.pyc
