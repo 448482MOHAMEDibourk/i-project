@@ -52,13 +52,13 @@ def git_changed_files_status(base_ref):
         lines = out.decode().splitlines()
         # returns list of (status, path)
         files = []
-        for l in lines:
-            if not l:
+        for line in lines:
+            if not line:
                 continue
-            parts = l.split("\t", 1)
+            parts = line.split("\t", 1)
             if len(parts) == 1:
                 # sometimes space separated
-                parts = l.split(maxsplit=1)
+                parts = line.split(maxsplit=1)
             if len(parts) == 2:
                 status, path = parts
                 files.append((status.strip(), path.strip()))
@@ -73,7 +73,7 @@ def main():
     base_ref = pr.get("base", {}).get("ref")
     title = pr.get("title", "")
     body = pr.get("body", "") or ""
-    labels = [l.get("name") for l in pr.get("labels", [])]
+    labels = [lbl.get("name") for lbl in pr.get("labels", [])]
 
     if not base_ref:
         print("No base ref found in event payload; skipping protected path check.")
@@ -100,7 +100,7 @@ def main():
     # check title/body/labels for EXCEPTION
     if "EXCEPTION:" in title or "EXCEPTION:" in body:
         has_exception = True
-    if any(l.upper() == "EXCEPTION" for l in (labels or [])):
+    if any(lbl.upper() == "EXCEPTION" for lbl in (labels or [])):
         has_exception = True
 
     if has_exception:
