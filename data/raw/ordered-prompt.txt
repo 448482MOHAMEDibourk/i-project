@@ -1,0 +1,28 @@
+# أمر تنفيذ آلي لمشروع ai-school:
+
+نفذ ما يلي ولا تتوقف حتى تكمل، اقترح توصيتك بدل خيارات متعددة، وشغل الأواملر اللازمة بمساعدة المستخدم بدلا من ارسالها نصيا:
+
+الهدف: تفاصيله في الملف: i-sys.md في المجلد: /home/eburk/Documents/i-project/history/project-tech-cards
+
+السياق: الاستفادة من تجربة /home/eburk/Documents/i-project/history/experiments/projects/failed-projects/i-sys ومعلومات التجارب السابقة في: /home/eburk/Documents/i-project/history
+
+الأولويات: في الملف PRIORITIES.md في المجلد: /home/eburk/Documents/i-project/priorities
+
+التوجيهات (احترمها بالترتيب):
+
+فحص شامل ل /home/eburk/Documents/i-project/history، 
+ثم /home/eburk/Documents/i-project/history/project-tech-cards،  
+ثم CONSOLIDATED.md 
+ثم PRIORITIES.md  
+ثم evolution.md في /home/eburk/Documents/i-project/history 
+ثم /home/eburk/Documents/i-project/new-project/i-sys
+ثم ضع خطة مرقمة بالتاريخ والتوقيت هنا: /home/eburk/Documents/i-project/history/project-build-plans ، 
+ثم نفذها في /home/eburk/Documents/i-project/new-project/i-sys، 
+ثم جرب وقيم ما نفذت ، 
+إذا فشلت عمليات، أضفها ل: /home/eburk/Documents/i-project/history/experiments/reasons-for-failure مع أسباب الفشل، 
+إذا نجحت عملياتك أضفها إلى: /home/eburk/Documents/i-project/history/experiments/reasons-for-success، وأضف الحلول إلى: /home/eburk/Documents/i-project/history/experiments/solutions ، 
+ثم وحد أفكار /home/eburk/Documents/i-project/history في CONSOLIDATED.md، 
+ثم عدل الأولويات في : PRIORITIES.md،
+وفي الأخير قم بفحص شامل لكشف نوع التقدم (ايجابي ام سلبي) عبر الزمن (اعتمادا على الملفات المرقمة و dummy_accuracy) وأضف تقرير ذلك مرقما بالتاريخ والتوقيت إلى evolution.md في /home/eburk/Documents/i-project/history 
+
+القيود: التزم الأمان خلال كل المراحل
