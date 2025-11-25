@@ -27,6 +27,13 @@ PROTECTED_PATTERNS = [
     r"^scripts/commands/",
 ]
 
+# Append-only patterns: these paths must not be modified or deleted (only additions allowed)
+APPEND_ONLY_PATTERNS = [
+    r"^data/archive/",
+    r"^data/experiments/",
+    r"^knowledge/",
+]
+
 
 def matches_protected(path):
     for p in PROTECTED_PATTERNS:
@@ -35,11 +42,23 @@ def matches_protected(path):
     return False
 
 
-def git_changed_files(base_ref):
+def git_changed_files_status(base_ref):
     # fetch of base_ref should be done in workflow step
     try:
-        out = subprocess.check_output(["git", "diff", "--name-only", f"origin/{base_ref}...HEAD"]) 
-        files = out.decode().splitlines()
+        out = subprocess.check_output(["git", "diff", "--name-status", f"origin/{base_ref}...HEAD"]) 
+        lines = out.decode().splitlines()
+        # returns list of (status, path)
+        files = []
+        for l in lines:
+            if not l:
+                continue
+            parts = l.split('\t', 1)
+            if len(parts) == 1:
+                # sometimes space separated
+                parts = l.split(maxsplit=1)
+            if len(parts) == 2:
+                status, path = parts
+                files.append((status.strip(), path.strip()))
         return files
     except subprocess.CalledProcessError:
         return []
@@ -57,8 +76,18 @@ def main():
         print("No base ref found in event payload; skipping protected path check.")
         return 0
 
-    files = git_changed_files(base_ref)
+    files_status = git_changed_files_status(base_ref)
+    files = [p for (_, p) in files_status]
     protected = [f for f in files if matches_protected(f)]
+
+    # detect append-only violations: modified (M) or deleted (D) in append-only paths
+    append_violations = []
+    for status, path in files_status:
+        if status.upper() in {"M", "D"}:
+            for p in APPEND_ONLY_PATTERNS:
+                if re.search(p, path):
+                    append_violations.append((status, path))
+                    break
 
     if not protected:
         print("No protected paths changed.")
@@ -73,17 +102,36 @@ def main():
 
     if has_exception:
         print("Protected paths changed, but EXCEPTION provided. Allowed.")
+        if protected:
+            print("Changed protected files:")
+            for p in protected:
+                print(" - ", p)
+        if append_violations:
+            print("Append-only violations detected but EXCEPTION allows them:")
+            for s, p in append_violations:
+                print(f" - {s}\t{p}")
+        return 0
+
+    # If there are append-only violations, fail with a clear message
+    if append_violations:
+        print("ERROR: Append-only paths were modified or deleted but no EXCEPTION provided.")
+        print("Append-only files changed (status:\tpath):")
+        for s, p in append_violations:
+            print(f" - {s}\t{p}")
+        print("\nThese paths are append-only. Do not modify or delete existing records. To correct data, add a new record/entry with explanation.")
+        print("If this change is required, include an 'EXCEPTION: <paths>' line in the PR body and link the approval issue.")
+        return 2
+
+    if protected:
+        print("ERROR: Protected paths were changed but no EXCEPTION provided.")
         print("Changed protected files:")
         for p in protected:
             print(" - ", p)
-        return 0
+        print("\nTo approve this change, include an 'EXCEPTION: <paths>' line in the PR body or add an 'EXCEPTION' label, and link the approval issue.")
+        return 2
 
-    print("ERROR: Protected paths were changed but no EXCEPTION provided.")
-    print("Changed protected files:")
-    for p in protected:
-        print(" - ", p)
-    print("\nTo approve this change, include an 'EXCEPTION: <paths>' line in the PR body or add an 'EXCEPTION' label, and link the approval issue.")
-    return 2
+    print("No protected or append-only violations detected.")
+    return 0
 
 
 if __name__ == "__main__":
