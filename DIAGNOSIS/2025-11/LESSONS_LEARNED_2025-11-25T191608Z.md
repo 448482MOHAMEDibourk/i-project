@@ -56,3 +56,73 @@ PYTHONPATH=$PWD pytest -q
 ---
 
 Generated and committed by automation on `chore/rename-i-sys-new-project`.
+
+## Appendix: DIAGNOSIS/CURRENT_ERRORS.txt (excerpt — first 50 lines)
+
+```
+--- Tue 25 Nov 2025 07:41:01 PM +01 ---
+--- DETECTING PATHS TO AUDIT ---
+Paths to audit: i-sys new-project
+ new-project/ai-school
+\n--- RUFF LINTING ERRORS (Active
+ Code) ---
+--- ruff: i-sys ---
+E402 Module level import not at t
+op of file
+  --> i-sys/i_sys/helpers.py:9:1
+   |
+ 7 | """
+ 8 |
+ 9 | import json
+   | ^^^^^^^^^^^
+10 | import os
+11 | from pathlib import Path
+   |
+
+E402 Module level import not at t
+op of file
+  --> i-sys/i_sys/helpers.py:10:1
+   |
+ 9 | import json
+10 | import os
+   | ^^^^^^^^^
+11 | from pathlib import Path
+12 | from typing import Dict, Tup
+le
+   |
+
+E402 Module level import not at t
+op of file
+  --> i-sys/i_sys/helpers.py:11:1
+   |
+ 9 | import json
+10 | import os
+11 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+12 | from typing import Dict, Tup
+le
+   |
+
+E402 Module level import not at t
+op of file
+  --> i-sys/i_sys/helpers.py:12:1
+   |
+10 | import os
+11 | from pathlib import Path
+12 | from typing import Dict, Tup
+le
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^
+13 |
+14 | import requests
+   |
+
+E402 Module level import not at t
+op of file
+  --> i-sys/i_sys/helpers.py:14:1
+   |
+```
+
+Generated and committed by automation on `chore/rename-i-sys-new-project`.
+
+````
