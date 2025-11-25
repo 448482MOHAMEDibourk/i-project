@@ -85,7 +85,7 @@ def check_ollama(
         except Exception:
             return True, resp.text[:400]
     except Exception as e:
-        return True, f"[error] {e}"
+        return False, f"[error] {e}"
 
 
 def check_aider(endpoint: str | None = None, timeout: int = 5) -> Tuple[bool, str]:
