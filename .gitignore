@@ -22,3 +22,4 @@ Thumbs.db
 
 # Ignore converted lesson planner JSON data
 /new-project/ai-school/lessons/imported-from-failed/lesson-planner/data/converted/
+new-project/ai-school/

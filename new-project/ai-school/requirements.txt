@@ -1,6 +1,0 @@
-# Minimal development requirements for ai-school (install after approval)
-pytest
-flake8
-numpy
-pandas
-openpyxl
