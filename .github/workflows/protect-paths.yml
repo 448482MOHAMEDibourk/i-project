@@ -1,0 +1,56 @@
+name: Protect Protected Paths
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-protected-paths:
+    name: Check protected paths and require EXCEPTION
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base ref
+        if: github.event.pull_request.base.ref != ''
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+
+      - name: Run protected paths check
+        id: check
+        continue-on-error: true
+        env:
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: |
+          rc=0
+          python3 scripts/check_protected_paths.py || rc=$?
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+
+      - name: Post guidance comment if protected-paths check failed
+        if: steps.check.outputs.rc != '0'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request.number;
+            const body = `⚠️ Protected-paths check failed on this PR.\n\n` +
+              `This PR touches protected or append-only paths. To proceed, either:\n` +
+              `- Add a line like \`EXCEPTION: <paths>\` in the PR body and link the approval issue, or\n` +
+              `- Open an approval issue and add the \`EXCEPTION\` label.\n\n` +
+              `For append-only paths (e.g. archives/experiments/knowledge), prefer adding a new record rather than modifying/deleting historical records.\n\n` +
+              `(This comment was posted automatically by CI.)`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr,
+              body
+            });
+
+      - name: Fail job because protected-paths check failed
+        if: steps.check.outputs.rc != '0'
+        run: |
+          echo "Protected-paths check failed; failing job." >&2
+          exit 1

@@ -1,0 +1,106 @@
+--- Tue 25 Nov 2025 07:41:01 PM +01 ---
+--- DETECTING PATHS TO AUDIT ---
+Paths to audit: i_system api_service api_service/ai-school
+\n--- RUFF LINTING ERRORS (Active Code) ---
+--- ruff: i_system ---
+E402 Module level import not at top of file
+  --> i_system/i_sys/helpers.py:9:1
+   |
+ 7 | """
+ 8 |
+ 9 | import json
+   | ^^^^^^^^^^^
+10 | import os
+11 | from pathlib import Path
+   |
+
+E402 Module level import not at top of file
+  --> i_system/i_sys/helpers.py:10:1
+   |
+ 9 | import json
+10 | import os
+   | ^^^^^^^^^
+11 | from pathlib import Path
+12 | from typing import Dict, Tuple
+   |
+
+E402 Module level import not at top of file
+  --> i_system/i_sys/helpers.py:11:1
+   |
+ 9 | import json
+10 | import os
+11 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+12 | from typing import Dict, Tuple
+   |
+
+E402 Module level import not at top of file
+  --> i_system/i_sys/helpers.py:12:1
+   |
+10 | import os
+11 | from pathlib import Path
+12 | from typing import Dict, Tuple
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 |
+14 | import requests
+   |
+
+E402 Module level import not at top of file
+  --> i_system/i_sys/helpers.py:14:1
+   |
+12 | from typing import Dict, Tuple
+13 |
+14 | import requests
+   | ^^^^^^^^^^^^^^^
+15 |
+16 | from src.config.settings import settings
+   |
+
+E402 Module level import not at top of file
+  --> i_system/i_sys/helpers.py:16:1
+   |
+14 | import requests
+15 |
+16 | from src.config.settings import settings
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+
+Found 6 errors.
+--- ruff: api_service ---
+All checks passed!
+--- ruff: api_service/ai-school ---
+All checks passed!
+\n--- PYTEST (Import & Config Errors) ---
+
+==================================== ERRORS ====================================
+_________ ERROR collecting api_service/ai-school/tests/test_loader.py __________
+ImportError while importing test module '/home/eburk/Documents/i-project/api_service/ai-school/tests/test_loader.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+api_service/ai-school/tests/test_loader.py:3: in <module>
+    import lesson_data.loader as loader
+E   ModuleNotFoundError: No module named 'lesson_data'
+___ ERROR collecting api_service/i_system/ai-school/tests/test_aider_client.py ____
+import file mismatch:
+imported module 'test_aider_client' has this __file__ attribute:
+  /home/eburk/Documents/i-project/i_system/ai-school/tests/test_aider_client.py
+which is not the same as the test file we want to collect:
+  /home/eburk/Documents/i-project/api_service/i_system/ai-school/tests/test_aider_client.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+________ ERROR collecting api_service/i_system/tests/test_helpers_smoke.py ________
+import file mismatch:
+imported module 'test_helpers_smoke' has this __file__ attribute:
+  /home/eburk/Documents/i-project/i_system/tests/test_helpers_smoke.py
+which is not the same as the test file we want to collect:
+  /home/eburk/Documents/i-project/api_service/i_system/tests/test_helpers_smoke.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=========================== short test summary info ============================
+ERROR api_service/ai-school/tests/test_loader.py
+ERROR api_service/i_system/ai-school/tests/test_aider_client.py
+ERROR api_service/i_system/tests/test_helpers_smoke.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!
+3 errors in 0.22s
+\n--- AUDIT COMPLETE ---
