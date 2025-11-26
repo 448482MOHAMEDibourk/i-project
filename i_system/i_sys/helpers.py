@@ -6,7 +6,6 @@ from pathlib import Path
 from typing import Dict, Tuple
 
 import requests
-
 from src.config.settings import settings
 
 """Helpers to check local AI services (Ollama, Aider) for i_system.
@@ -76,18 +75,83 @@ def check_ollama(
     )
     headers = _headers_from_env("OLLAMA_HEADERS")
 
-    url = f"{base_url.rstrip('/')}/api/generate"
-    payload = {"model": model, "prompt": "i_system health check: اختبار"}
+    # 1) Quick GET / root check
     try:
-        resp = requests.post(url, json=payload, timeout=timeout, headers=headers)
-        resp.raise_for_status()
-        try:
-            j = resp.json()
-            return True, json.dumps(j, ensure_ascii=False)[:400]
-        except Exception:
+        url = f"{base_url.rstrip('/')}/"
+        resp = requests.get(url, timeout=timeout, headers=headers)
+        if 200 <= resp.status_code < 300:
+            # return short body or JSON
+            ct = resp.headers.get("Content-Type", "")
+            if "application/json" in ct:
+                try:
+                    j = resp.json()
+                    return True, json.dumps(j, ensure_ascii=False)[:400]
+                except Exception:
+                    return True, resp.text[:400]
             return True, resp.text[:400]
-    except Exception as e:
-        return False, f"[error] {e}"
+    except Exception:
+        # proceed to additional probes
+        pass
+
+    # 2) Try listing models via /api/tags (common Ollama endpoint)
+    first_model = None
+    try:
+        url = f"{base_url.rstrip('/')}/api/tags"
+        resp = requests.get(url, timeout=timeout, headers=headers)
+        if 200 <= resp.status_code < 300:
+            try:
+                j = resp.json()
+                # confirm structure
+                if isinstance(j, dict) and "models" in j:
+                    models = j.get("models") or []
+                    if isinstance(models, list) and len(models) > 0:
+                        # extract model name if available
+                        m0 = models[0]
+                        if isinstance(m0, dict) and "model" in m0:
+                            first_model = m0.get("model") or m0.get("name")
+                        elif isinstance(m0, str):
+                            first_model = m0
+                    return True, json.dumps(j, ensure_ascii=False)[:400]
+            except Exception:
+                return True, resp.text[:400]
+    except Exception:
+        pass
+
+    # 3) If we have (or were given) a model name, attempt a lightweight POST to a generate endpoint
+    # to validate generation works. Use model from args/settings or first_model found above.
+    chosen_model = model or first_model
+    if chosen_model:
+        paths = [
+            "/api/generate",
+            "/api/completions",
+            "/v1/generate",
+            "/v1/completions",
+        ]
+        payload = {"model": chosen_model, "prompt": "i_system health check: اختبار"}
+        last_err = None
+        for p in paths:
+            url = f"{base_url.rstrip('/')}{p}"
+            try:
+                resp = requests.post(url, json=payload, timeout=timeout, headers=headers)
+                if 200 <= resp.status_code < 300:
+                    try:
+                        j = resp.json()
+                        return True, json.dumps(j, ensure_ascii=False)[:400]
+                    except Exception:
+                        return True, resp.text[:400]
+                try:
+                    body = resp.text
+                except Exception:
+                    body = "<no-body>"
+                last_err = f"HTTP {resp.status_code}: {body[:200]} (path {p})"
+            except Exception as e:
+                last_err = e
+
+        if last_err is None:
+            return False, "[error] Ollama generate request failed: no response and no exception"
+        return False, f"[error] Ollama generate request failed: {last_err}"
+
+    return False, "[error] Ollama health check failed: no reachable endpoint or model discovered"
 
 
 def check_aider(endpoint: str | None = None, timeout: int = 5) -> Tuple[bool, str]:
