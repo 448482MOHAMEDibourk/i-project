@@ -35,7 +35,7 @@ Contains one-file technical overviews per project. Examples:
 - `project-tech-cards/ai-school.md`
 - `project-tech-cards/Automation.md`
 - `project-tech-cards/TutFit.md`
-- `project-tech-cards/i-sys.md`
+- `project-tech-cards/i_system.md`
 
 Use these to quickly recall stack choices, known gaps, and next steps when revisiting a project.
 
